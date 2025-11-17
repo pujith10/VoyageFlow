@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>VoyageFlow | Trip Planner & Price Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="calculator.css" />
+</head>
+<body>
+  <!-- ================= HEADER / NAVBAR ================= -->
+  <header class="header">
+    <div class="nav-container">
+      <div class="logo" onclick="window.location.href='index.html'">
+        <span class="logo-icon">✈️</span>
+        <span class="logo-text">VoyageFlow</span>
+      </div>
+
+      <nav class="nav" id="navbar">
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="calculator.html" class="nav-link active">Trip Planner</a>
+      </nav>
+
+      <!-- Cart summary in header -->
+      <div class="cart-header" id="cartHeader">
+        <button class="cart-btn" id="cartToggleBtn">
+          <span class="cart-icon">🛒</span>
+          <span class="cart-text">
+            <span id="cartItemsCount">0</span> items
+            <span class="cart-divider">•</span>
+            <span id="cartHeaderTotal">₹0</span>
+          </span>
+        </button>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="hero-tag">Planner • Itinerary • Cost Estimator</p>
+      <h1>Build your dream trip, step by step.</h1>
+      <p class="hero-subtitle">
+        Choose your travel style, food packages, and activities. 
+        Our smart calculator updates your estimated cost in real time and keeps 
+        a cart on top so you can double-check your selections anytime.
+      </p>
+      <ul class="hero-bullets">
+        <li>✔ No login needed – just explore and simulate.</li>
+        <li>✔ Transparent pricing for flights, stays, food & activities.</li>
+        <li>✔ Perfect for students, families, and first-time travellers.</li>
+      </ul>
+      <p class="hero-note">Scroll down and tick options you like. Check the cart anytime to re-view your choices.</p>
+    </div>
+  </section>
+
+  <!-- ================= MAIN ================= -->
+  <main class="main">
+
+    <!-- ===== GLOBAL TOTAL SUMMARY BAR ===== -->
+    <section class="summary-bar">
+      <div class="summary-text">
+        <h2>Live Trip Estimate</h2>
+        <p>Based on your current selections across travel, stay, food and activities.</p>
+      </div>
+      <div class="summary-values">
+        <div class="summary-amount">
+          <span class="label">Total (approx.)</span>
+          <span class="value" id="grandTotal">₹0</span>
+        </div>
+        <button class="btn ghost" id="viewCartBtn">View Cart</button>
+      </div>
+    </section>
+
+    <!-- ====== TRAVEL OPTIONS ====== -->
+    <section class="planner-section">
+      <header class="planner-header">
+        <h2>1. Travel Options</h2>
+        <p>Choose how you’d like to reach your destination. You can simulate multiple combinations.</p>
+      </header>
+
+      <div class="options-grid">
+        <!-- Card 1 -->
+        <article class="option-card">
+          <label class="option-content">
+            <div class="option-head">
+              <input 
+                type="checkbox" 
+                class="option-input"
+                data-id="economy-flight"
+                data-name="Economy Flight (Round Trip)"
+                data-category="Travel"
+                data-price="12000"
+              />
+              <div>
+                <h3>Economy Flight (Round Trip)</h3>
+                <p class="option-price">₹12,000</p>
+              </div>
+            </div>
+            <p class="option-desc">
+              Budget-friendly flight with standard seat selection, 7–10kg cabin baggage and 15–20kg check-in baggage.
+            </p>
+            <ul class="option-points">
+              <li>Best for: students, solo travellers.</li>
+              <li>Average flight duration: 3–7 hours (regional).</li>
+            </ul>
+          </label>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="option-card">
+          <label class="option-content">
+            <div class="option-head">
+              <input 
+                type="checkbox" 
+                class="option-input"
+                data-id="business-flight"
+                data-name="Business Class Flight"
+                data-category="Travel"
+                data-price="40000"
+              />
+              <div>
+                <h3>Business Class Flight</h3>
+                <p class="option-price">₹40,000</p>
+              </div>
+            </div>
+            <p class="option-desc">
+              Extra legroom, lounge access, priority check-in and upgraded meals for a premium travel experience.
+            </p>
+            <ul class="option-points">
+              <li>Best for: business travellers, honeymoon trips.</li>
+              <li>Includes priority boarding & flexible changes.</li>
+            </ul>
+          </label>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="option-card">
+          <label class="option-content">
+            <div class="option-head">
+              <input 
+                type="checkbox" 
+                class="option-input"
+                data-id="train-travel"
+                data-name="High-Speed Train Pass"
+                data-category="Travel"
+                data-price="6000"
+              />
+              <div>
+                <h3>High-Speed Train Pass</h3>
+                <p class="option-price">₹6,000</p>
+              </div>
+            </div>
+            <p class="option-desc">
+              Rail pass covering intercity travel for 3–5 days. Perfect for multi-city Europe or Japan itineraries.
+            </p>
+            <ul class="option-points">
+              <li>Scenic routes with flexible timings.</li>
+              <li>Eco-friendly and comfortable.</li>
+            </ul>
+          </label>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="option-card">
+          <label class="option-content">
+            <div class="option-head">
+              <input 
+                type="checkbox" 
+                class="option-input"
+                data-id="local-transport"
+                data-name="Local Transport Pass"
+                data-category="Travel"
+                data-price="2500"
+              />
+              <div>
+                <h3>Local Transport Pass</h3>
+                <p class="option-price">₹2,500</p>
+              </div>
+            </div>
+            <p class="option-desc">
+              Unlimited access to metro, buses and trams inside the city for 3–7 days depending on destination.
+            </p>
+            <ul class="option-points">
+              <li>Saves time and money vs. single tickets.</li>
+              <li>Great for intensive sightseeing days.</li>
+            </ul>
+          </label>
+        </article>
+      </div>
+    </section>
+
+    <!-- ====== STAY OPTIONS ====== -->
+    <section class="planner-section">
+      <header class="planner-header">
+        <h2>2. Stay & Accommodation</h2>
+        <p>Select your preferred style of stay. Prices are indicative per night and can vary by destination.</p>
+      </header>
+
+      <div class="options-grid">
+        <article class="option-card">
+          <label class="option-content">
+            <div class="option-head">
+              <input 
+                type="checkbox"
+                class="option-input"
+                data-id="hostel-bed"
+                data-name="Backpacker Hostel Bed"
+                data-category="Stay"
+                data-price="1500"
+              />
+              <div>
+                <h3>Backpacker Hostel Bed</h3>
+                <p class="option-price">₹1,500</p>
+              </div>
+            </div>
+            <p class="option-desc">
+              Shared dormitory with basic amenities, lockers and common social areas – ideal for budget travellers.
+            </p>
+            <ul class="option-points">
+              <li>Meet people from around the world.</li>
+              <li>Usually includes Wi-Fi and basic breakfast.</li>
+            </ul>
+          </label>
+        </article>
+
+        <article class="option-card">
+          <label class="option-content">
+            <div class="option-head">
+              <input 
+                type="checkbox"
+                class="option-input"
+                data-id="budget-hotel"
+                data-name="Budget Hotel (Private Room)"
+                data-category="Stay"
+                data-price="3200"
+              />
+              <div>
+                <h3>Budget Hotel (Private Room)</h3>
+                <p class="option-price">₹3,200</p>
+              </div>
+            </div>
+            <p class="option-desc">
+              Clean private room with attached washroom, suitable for couples, friends or family trips.
+            </p>
+            <ul class="option-points">
+              <li>Includes daily housekeeping.</li>
+              <li>Often near public transport.</li>
+            </ul>
+          </label>
+        </article>
+
+        <article class="option-card">
+          <label class="option-content">
+            <div class="option-head">
+              <input 
+                type="checkbox"
+                class="option-input"
+                data-id="apartment-stay"
+                data-name="Serviced Apartment"
+                data-category="Stay"
+                data-price="4800"
+              />
+              <div>
+                <h3>Serviced Apartment</h3>
+                <p class="option-price">₹4,800</p>
+              </div>
+            </div>
+            <p class="option-desc">
+              Apartment-style stay with kitchen & workspace. Great for long stays or workations.
+            </p>
+            <ul class="option-points">
+              <li>Cook your own meals & save.</li>
+              <li>More privacy and space.</li>
+            </ul>
+          </label>
+        </article>
+
+        <article class="option-card">
+          <label class="option-content">
+            <div class="option-head">
+              <input 
+                type="checkbox"
+                class="option-input"
+                data-id="luxury-hotel"
+                data-name="Luxury Hotel"
+                data-category="Stay"
+                data-price="9000"
+              />
+              <div>
+                <h3>Luxury Hotel</h3>
+                <p class="option-price">₹9,000</p>
+              </div>
+            </div>
+            <p class="option-desc">
+              4–5 star property with premium facilities, pool, gym and curated experiences.
+            </p>
+            <ul class="option-points">
+              <li>Perfect for anniversaries & celebrations.</li>
+              <li>Concierge support for tours & bookings.</li>
+            </ul>
+          </label>
+        </article>
+      </div>
+    </section>
+
+    <!-- ====== FOOD PACKAGES ====== -->
+    <section class="planner-section">
+      <header class="planner-header">
+        <h2>3. Food Packages</h2>
+        <p>Pick how you want to handle your meals during the trip. Mix and match for different days.</p>
+      </header>
+
+      <div class="options-grid">
+        <article class="option-card">
+          <label class="option-content">
+            <div class="option-head">
+              <input 
+                type="checkbox"
+                class="option-input"
+                data-id="veg-meal"
+                data-name="Indian Veg Meal Plan"
+                data-category="Food"
+                data-price="1200"
+              />
+              <div>
+                <h3>Indian Veg Meal Plan</h3>
+                <p class="option-price">₹1,200</p>
+              </div>
+            </div>
+            <p class="option-desc">
+              2–3 Indian vegetarian meals a day with balanced nutrition and familiar flavours.
+            </p>
+            <ul class="option-points">
+              <li>Ideal for travellers new to international food.</li>
+              <li>Includes tea/coffee in the morning or evening.</li>
+            </ul>
+          </label>
+        </article>
+
+        <article class="option-card">
+          <label class="option-content">
+            <div class="option-head">
+              <input 
+                type="checkbox"
+                class="option-input"
+                data-id="nonveg-meal"
+                data-name="Mixed Non-Veg Plan"
+                data-category="Food"
+                data-price="1800"
+              />
+              <div>
+                <h3>Mixed Non-Veg Plan</h3>
+                <p class="option-price">₹1,800</p>
+              </div>
+            </div>
+            <p class="option-desc">
+              Combination of continental and local non-vegetarian dishes planned across the day.
+            </p>
+            <ul class="option-points">
+              <li>Great for food explorers.</li>
+              <li>Includes 1 dessert per day.</li>
+            </ul>
+          </label>
+        </article>
+
+        <article class="option-card">
+          <label class="option-content">
+            <div class="option-head">
+              <input 
+                type="checkbox"
+                class="option-input"
+                data-id="street-food"
+                data-name="Local Street Food Walk"
+                data-category="Food"
+                data-price="2200"
+              />
+              <div>
+                <h3>Local Street Food Walk</h3>
+                <p class="option-price">₹2,200</p>
+              </div>
+            </div>
+            <p class="option-desc">
+              Guided evening walk through popular food markets with 6–8 tasting items included.
+            </p>
+            <ul class="option-points">
+              <li>Understand culture through food.</li>
+              <li>Includes hygiene-filtered, curated stalls.</li>
+            </ul>
+          </label>
+        </article>
+
+        <article class="option-card">
+          <label class="option-content">
+            <div class="option-head">
+              <input 
+                type="checkbox"
+                class="option-input"
+                data-id="buffet-upgrade"
+                data-name="Hotel Buffet Upgrade"
+                data-category="Food"
+                data-price="2500"
+              />
+              <div>
+                <h3>Hotel Buffet Upgrade</h3>
+                <p class="option-price">₹2,500</p>
+              </div>
+            </div>
+            <p class="option-desc">
+              Upgrade your stay with unlimited breakfast or dinner buffet at the hotel.
+            </p>
+            <ul class="option-points">
+              <li>Wide vegetarian & non-vegetarian spread.</li>
+              <li>Good value for long sightseeing days.</li>
+            </ul>
+          </label>
+        </article>
+      </div>
+    </section>
+
+    <!-- ====== ACTIVITIES ====== -->
+    <section class="planner-section">
+      <header class="planner-header">
+        <h2>4. Activities & Experiences</h2>
+        <p>Add optional experiences to make your itinerary more memorable.</p>
+      </header>
+
+      <div class="options-grid">
+        <article class="option-card">
+          <label class="option-content">
+            <div class="option-head">
+              <input 
+                type="checkbox"
+                class="option-input"
+                data-id="city-tour"
+                data-name="Guided City Tour"
+                data-category="Activity"
+                data-price="2000"
+              />
+              <div>
+                <h3>Guided City Tour</h3>
+                <p class="option-price">₹2,000</p>
+              </div>
+            </div>
+            <p class="option-desc">
+              Half-day tour covering major highlights with a local English-speaking guide.
+            </p>
+            <ul class="option-points">
+              <li>Perfect for first-time visitors.</li>
+              <li>Includes hotel pick-up in most cities.</li>
+            </ul>
+          </label>
+        </article>
+
+        <article class="option-card">
+          <label class="option-content">
+            <div class="option-head">
+              <input 
+                type="checkbox"
+                class="option-input"
+                data-id="adventure-sports"
+                data-name="Adventure Sports Combo"
+                data-category="Activity"
+                data-price="5000"
+              />
+              <div>
+                <h3>Adventure Sports Combo</h3>
+                <p class="option-price">₹5,000</p>
+              </div>
+            </div>
+            <p class="option-desc">
+              Bundle of 2–3 adventure activities such as rafting, ATV rides or ziplining (location dependent).
+            </p>
+            <ul class="option-points">
+              <li>Includes basic safety gear and briefing.</li>
+              <li>Subject to weather conditions.</li>
+            </ul>
+          </label>
+        </article>
+
+        <article class="option-card">
+          <label class="option-content">
+            <div class="option-head">
+              <input 
+                type="checkbox"
+                class="option-input"
+                data-id="scuba-diving"
+                data-name="Scuba Diving Experience"
+                data-category="Activity"
+                data-price="9000"
+              />
+              <div>
+                <h3>Scuba Diving Experience</h3>
+                <p class="option-price">₹9,000</p>
+              </div>
+            </div>
+            <p class="option-desc">
+              Introductory scuba session with instructor, equipment and underwater photography (at selected destinations).
+            </p>
+            <ul class="option-points">
+              <li>Swim skills recommended but not mandatory.</li>
+              <li>Medical form may be required.</li>
+            </ul>
+          </label>
+        </article>
+
+        <article class="option-card">
+          <label class="option-content">
+            <div class="option-head">
+              <input 
+                type="checkbox"
+                class="option-input"
+                data-id="cultural-show"
+                data-name="Cultural Show Ticket"
+                data-category="Activity"
+                data-price="1200"
+              />
+              <div>
+                <h3>Cultural Show Ticket</h3>
+                <p class="option-price">₹1,200</p>
+              </div>
+            </div>
+            <p class="option-desc">
+              Evening performance showcasing music, dance or theatre rooted in local traditions.
+            </p>
+            <ul class="option-points">
+              <li>Great end to a sightseeing day.</li>
+              <li>Often includes reserved seating.</li>
+            </ul>
+          </label>
+        </article>
+      </div>
+    </section>
+
+    <!-- ====== FINAL CONFIRM SECTION ====== -->
+    <section class="planner-section confirm-section">
+      <div class="confirm-inner">
+        <h2>5. Confirm Your Simulated Booking</h2>
+        <p>
+          When you’re satisfied with your choices, click the button below. 
+          We’ll show you a summary in a custom popup and then take you to a 
+          final confirmation page.
+        </p>
+        <button class="btn primary" id="confirmBtn">Confirm & Continue</button>
+        <p class="small-note">Note: This is a simulation for learning purposes. No real booking or payment is made.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FLOATING VIEW-CART BUTTON (MOBILE) ================= -->
+  <button class="floating-cart-btn" id="floatingCartBtn">
+    🛒 View Cart
+  </button>
+
+  <!-- ================= CART DRAWER ================= -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <header class="cart-drawer-header">
+      <h2>Your Trip Cart</h2>
+      <button class="cart-close-btn" id="cartCloseBtn">✕</button>
+    </header>
+
+    <div class="cart-drawer-body">
+      <p class="cart-subtitle">
+        Review all items you’ve added so far. You can remove anything before confirming.
+      </p>
+
+      <ul class="cart-items-list" id="cartItemsList">
+        <!-- Populated by JavaScript -->
+      </ul>
+
+      <div class="cart-empty-state" id="cartEmptyState">
+        <p>No items added yet. Scroll the page and tick some options.</p>
+      </div>
+    </div>
+
+    <footer class="cart-drawer-footer">
+      <div class="cart-total-row">
+        <span>Total Estimate</span>
+        <strong id="cartDrawerTotal">₹0</strong>
+      </div>
+      <button class="btn primary" id="cartConfirmBtn">Confirm & Continue</button>
+    </footer>
+  </aside>
+
+  <!-- ================= CONFIRMATION MODAL ================= -->
+  <div class="modal-overlay" id="confirmModalOverlay"></div>
+  <div class="modal" id="confirmModal" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+      <h2>Trip Simulation Confirmed 🎉</h2>
+      <p id="modalMessage">
+        Your selections have been recorded for this session. 
+      </p>
+      <p class="modal-note">
+        You’ll now be taken to a final “Thank You / Booking Simulated” page. 
+        This is just a demo – no real tickets are booked.
+      </p>
+      <button class="btn primary" id="modalContinueBtn">Go to Final Page</button>
+    </div>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <p>© <span id="year"></span> VoyageFlow • Trip Planner & Interactive Price Calculator.</p>
+    <div class="footer-links">
+      <a href="blog.html">Back to Blog</a>
+      <a href="index.html">Start Over</a>
+    </div>
+  </footer>
+
+  <script src="calculator.js"></script>
+</body>
+</html>

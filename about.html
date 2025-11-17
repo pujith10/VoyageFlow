@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>VoyageFlow | About Us</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="about.css" />
+</head>
+<body>
+  <!-- ================= HEADER / NAVBAR ================= -->
+  <header class="header">
+    <div class="nav-container">
+      <div class="logo" onclick="window.location.href='index.html'">
+        <span class="logo-icon">✈️</span>
+        <span class="logo-text">VoyageFlow</span>
+      </div>
+
+      <nav class="nav" id="navbar">
+        <a href="index.html" class="nav-link">Registration</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="calculator.html" class="nav-link">Trip Planner</a>
+        <a href="about.html" class="nav-link active">About Us</a>
+      </nav>
+
+      <!-- Mobile menu button -->
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ================= HERO / INTRO ================= -->
+  <main class="main">
+    <section class="hero">
+      <div class="hero-inner">
+        <p className="hero-tag">About VoyageFlow</p>
+        <h1>We don’t just show trips. We simulate the journey.</h1>
+        <p class="hero-subtitle">
+          VoyageFlow is a front-end-only travel experience simulator designed to walk a user through 
+          a realistic travel flow — from registration to reading travel blogs, planning a trip, 
+          calculating costs and ending with a confirmation page.
+        </p>
+        <div class="hero-grid">
+          <div class="hero-badge">
+            🎯 <span>Front-end demonstration project</span>
+          </div>
+          <div class="hero-badge">
+            💻 <span>Built using HTML, CSS & JavaScript only</span>
+          </div>
+          <div class="hero-badge">
+            📚 <span>Designed for learning & portfolio use</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= MISSION / VISION ================= -->
+    <section class="section">
+      <div class="section-header">
+        <h2>Our Mission & Vision</h2>
+        <p>
+          VoyageFlow is not a commercial product. It’s a structured academic/portfolio project 
+          that proves how much can be done using only client-side technologies.
+        </p>
+      </div>
+
+      <div class="pill-grid">
+        <article class="pill-card">
+          <h3>Mission</h3>
+          <p>
+            To create a realistic, interactive travel portal experience that helps students and 
+            beginners understand how multiple pages, UI states and validations can work 
+            together without any backend or database.
+          </p>
+        </article>
+
+        <article class="pill-card">
+          <h3>Vision</h3>
+          <p>
+            To become a template or reference project that anyone can clone, extend and show in 
+            their portfolio as evidence of solid front-end fundamentals and good UI thinking.
+          </p>
+        </article>
+
+        <article class="pill-card">
+          <h3>Core Idea</h3>
+          <p>
+            Simulate a “real” travel website – user signup, reading content, adding items to a cart, 
+            viewing a total and final confirmation – while staying within the limits of static hosting 
+            platforms like GitHub Pages.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= HOW THE WEBSITE IS STRUCTURED ================= -->
+    <section class="section alt">
+      <div class="section-header">
+        <h2>How VoyageFlow is Structured</h2>
+        <p>
+          The website is split into multiple dedicated pages, each showcasing a different front-end concept.
+        </p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="dot"></div>
+          <div class="content">
+            <h3>Page 1 – Registration</h3>
+            <p>
+              A responsive registration form that validates phone number, PIN code and email format using JavaScript. 
+              On successful submission, a custom modal appears (no browser alert) and then routes the user to the blog page.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="dot"></div>
+          <div class="content">
+            <h3>Page 2 – Travel Blog</h3>
+            <p>
+              A single scrolling page with multiple destination sections like Paris, Tokyo, Bali, New York and Dubai. 
+              A sticky navigation bar at the top lets users jump to any section with smooth scrolling.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="dot"></div>
+          <div class="content">
+            <h3>Page 3 – Trip Planner & Price Calculator</h3>
+            <p>
+              Card-based options for travel, stay, food and activities. Each option has a checkbox and a price. 
+              Selections are stored in a JavaScript object (acting as a cart), and the total is recalculated 
+              instantly whenever the user adds or removes an item. A cart drawer lets users re-check everything.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="dot"></div>
+          <div class="content">
+            <h3>Page 4 – Thank You / Confirmation</h3>
+            <p>
+              A polished final page that concludes the simulated booking journey, explains what the user just 
+              experienced, and gives ideas for how this project can be used or extended further.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TECHNICAL HIGHLIGHTS ================= -->
+    <section class="section">
+      <div class="section-header">
+        <h2>Technical Highlights</h2>
+        <p>
+          Even without a backend or database, VoyageFlow demonstrates several important front-end development skills.
+        </p>
+      </div>
+
+      <div class="feature-grid">
+        <article class="feature-card">
+          <h3>Form Validation</h3>
+          <p>
+            Real-time or on-submit checks for phone number length, PIN code and email structure using regular 
+            expressions and basic string handling in JavaScript.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <h3>Custom Modals</h3>
+          <p>
+            All popups (success messages, confirmation prompts) are built using HTML/CSS overlays and transitions, 
+            instead of using <code>alert()</code>, <code>confirm()</code> or <code>prompt()</code>.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <h3>Cart & State Management</h3>
+          <p>
+            A lightweight cart system on the planner page shows how to use plain JavaScript objects and DOM updates 
+            to track selected items, quantities and total cost without any framework.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <h3>Responsive Design</h3>
+          <p>
+            Every page is designed mobile-first, then enhanced for tablets and laptops using media queries 
+            and flexible grid layouts.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <h3>Navigation & UX</h3>
+          <p>
+            Sticky headers, smooth scrolling, floating buttons and consistent colour schemes work together 
+            to keep the experience intuitive and pleasant.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <h3>Static Hosting Ready</h3>
+          <p>
+            All pages are purely client-side, making them easy to deploy on GitHub Pages, Netlify, or other static hosts.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= WHO CAN USE THIS PROJECT ================= -->
+    <section class="section alt">
+      <div class="section-header">
+        <h2>Who Is VoyageFlow For?</h2>
+        <p>
+          The project is intentionally generic and educational, so it can fit into different contexts.
+        </p>
+      </div>
+
+      <div class="audience-grid">
+        <article class="audience-card">
+          <h3>Students</h3>
+          <p>
+            Use this as a lab assignment submission, mini-project, or as part of a bigger web development course. 
+            You can customise content, styling and destinations.
+          </p>
+        </article>
+        <article class="audience-card">
+          <h3>Beginner Developers</h3>
+          <p>
+            A great playground to practise DOM manipulation, events, responsive design and basic UX thinking 
+            without worrying about backend complexity.
+          </p>
+        </article>
+        <article class="audience-card">
+          <h3>Portfolio Builders</h3>
+          <p>
+            Showcase this as a complete, well-structured project that tells a story from start to finish, 
+            rather than just a single static page.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= CALL TO ACTION ================= -->
+    <section class="section">
+      <div class="cta-card">
+        <h2>Want to explore it again?</h2>
+        <p>
+          Jump back into any stage of the flow — update your trip cart, read more destinations, 
+          or restart the simulation completely from registration.
+        </p>
+        <div class="cta-actions">
+          <a href="calculator.html" class="btn primary">Open Trip Planner</a>
+          <a href="blog.html" class="btn ghost">Read the Travel Blog</a>
+          <a href="index.html" class="btn subtle">Restart from Registration</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <p>© <span id="year"></span> VoyageFlow • About the Project.</p>
+    <div class="footer-links">
+      <a href="calculator.html">Trip Planner</a>
+      <a href="thankyou.html">Confirmation Page</a>
+    </div>
+  </footer>
+
+  <script src="about.js"></script>
+</body>
+</html>

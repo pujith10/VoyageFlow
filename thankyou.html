@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>VoyageFlow | Thank You & Booking Simulation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="thankyou.css" />
+</head>
+<body>
+  <!-- ================= HEADER / NAVBAR ================= -->
+  <header class="header">
+    <div class="nav-container">
+      <div class="logo" onclick="window.location.href='index.html'">
+        <span class="logo-icon">✈️</span>
+        <span class="logo-text">VoyageFlow</span>
+      </div>
+
+      <nav class="nav" id="navbar">
+        <a href="index.html" class="nav-link">Registration</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="calculator.html" class="nav-link">Trip Planner</a>
+        <a href="about.html" class="nav-link">About Us</a>
+      </nav>
+
+      <!-- Mobile menu button -->
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ================= HERO / MAIN CARD ================= -->
+  <main class="main">
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-icon">🎉</div>
+        <h1>Thank you for exploring VoyageFlow!</h1>
+        <p class="hero-subtitle">
+          Your trip simulation is complete. While no real booking was made, you just walked through 
+          a full travel journey – from registration to inspiration to price calculation.
+        </p>
+
+        <div class="hero-highlight">
+          <p>
+            This page marks the end of the interactive experience but the beginning of your real travel dreams.
+            You can always go back, tweak your selections, or restart the flow to simulate a brand-new trip.
+          </p>
+        </div>
+
+        <div class="hero-actions">
+          <a href="calculator.html" class="btn primary">Modify Trip Simulation</a>
+          <a href="blog.html" class="btn ghost">Read Travel Stories</a>
+          <a href="index.html" class="btn subtle">Start Over</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= INFO / SUMMARY SECTION ================= -->
+    <section class="info-section">
+      <div class="info-grid">
+        <article class="info-card">
+          <h2>What You Just Experienced</h2>
+          <ul>
+            <li>🔐 <strong>Page 1 – Registration:</strong> A validated user onboarding form with custom popup.</li>
+            <li>🗺️ <strong>Page 2 – Travel Blog:</strong> Informative destination sections with smooth scrolling.</li>
+            <li>🧮 <strong>Page 3 – Trip Planner:</strong> Interactive, real-time price calculator with cart.</li>
+            <li>✅ <strong>Page 4 – Confirmation:</strong> You are here – the simulated booking acknowledgement.</li>
+          </ul>
+          <p class="info-note">
+            All of this was built using only HTML, CSS and modern JavaScript, with no database or backend.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h2>How to Use This Project</h2>
+          <p>
+            This website is ideal as a front-end assignment or portfolio project. It demonstrates:
+          </p>
+          <ul>
+            <li>✔ Form validation and custom modals.</li>
+            <li>✔ Single-page style scrolling between sections.</li>
+            <li>✔ State handling using JavaScript objects (for the cart).</li>
+            <li>✔ Responsive, mobile-first layout.</li>
+          </ul>
+          <p class="info-note">
+            You can extend this further by connecting it to a backend or adding real APIs in future versions.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h2>Next Steps You Can Try</h2>
+          <ol>
+            <li>Change prices and add more categories in the planner.</li>
+            <li>Update travel blog content to match your favourite destinations.</li>
+            <li>Enhance the UI with more animations or dark/light theme toggle.</li>
+            <li>Connect the forms to a backend (Node, PHP, etc.) in a future project.</li>
+          </ol>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= SOCIAL / CONTACT SECTION ================= -->
+    <section class="social-section">
+      <div class="social-inner">
+        <h2>Stay Connected With VoyageFlow</h2>
+        <p>
+          Imagine VoyageFlow as a future travel platform where you can compare trips, 
+          check safety notes, and learn from other travellers’ experiences.
+        </p>
+        <div class="social-links">
+          <a href="#" class="social-pill">🌐 Website (Demo)</a>
+          <a href="#" class="social-pill">📸 Instagram (Travel Reels)</a>
+          <a href="#" class="social-pill">🎥 YouTube (Vlogs & Guides)</a>
+          <a href="#" class="social-pill">💼 LinkedIn (Project Case Study)</a>
+        </div>
+        <p class="social-note">
+          In a real deployment, these links could point to your own portfolio, GitHub repository or socials.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <p>© <span id="year"></span> VoyageFlow • Booking Simulated • Front-End Only Demo.</p>
+    <div class="footer-links">
+      <a href="about.html">About VoyageFlow</a>
+      <a href="index.html">Restart Journey</a>
+    </div>
+  </footer>
+
+  <script src="thankyou.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VoyageFlow - Registration</title>
+    <link rel="stylesheet" href="registration.css" />
+</head>
+
+<body>
+
+    <header class="header">
+        <h1 class="logo">VoyageFlow</h1>
+    </header>
+
+    <section class="form-container">
+
+        <h2>Create Your Travel Account</h2>
+        <p class="intro-text">Start your travel journey with us! Fill in your details to unlock a personalized travel experience.</p>
+
+        <form id="regForm">
+
+            <div class="input-group">
+                <label>Full Name</label>
+                <input type="text" id="name" required />
+                <span class="error" id="nameError"></span>
+            </div>
+
+            <div class="input-group">
+                <label>Email Address</label>
+                <input type="email" id="email" required />
+                <span class="error" id="emailError"></span>
+            </div>
+
+            <div class="input-group">
+                <label>Phone Number</label>
+                <input type="text" id="phone" maxlength="10" required />
+                <span class="error" id="phoneError"></span>
+            </div>
+
+            <div class="input-group">
+                <label>PIN Code</label>
+                <input type="text" id="pin" maxlength="6" required />
+                <span class="error" id="pinError"></span>
+            </div>
+
+            <div class="input-group">
+                <label>Country</label>
+                <select id="country">
+                    <option value="India">India</option>
+                    <option value="USA">United States</option>
+                    <option value="UK">United Kingdom</option>
+                    <option value="Japan">Japan</option>
+                    <option value="Australia">Australia</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Gender</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="gender" value="Male" required /> Male</label>
+                    <label><input type="radio" name="gender" value="Female" /> Female</label>
+                    <label><input type="radio" name="gender" value="Other" /> Other</label>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Why do you love travelling?</label>
+                <textarea id="reason" placeholder="Tell us your reason..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </section>
+
+    <!-- Custom Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <h2>Registration Successful!</h2>
+            <p>Welcome to VoyageFlow — Your travel journey begins now.</p>
+            <button id="continueBtn">Continue</button>
+        </div>
+    </div>
+
+    <script src="registration.js"></script>
+</body>
+</html>

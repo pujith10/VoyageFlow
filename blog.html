@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>VoyageFlow | Travel Blog & Destinations</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="blog.css" />
+</head>
+<body>
+  <!-- ================= HEADER / NAVBAR ================= -->
+  <header class="header">
+    <div class="nav-container">
+      <div class="logo" onclick="window.location.href='index.html'">
+        <span class="logo-icon">✈️</span>
+        <span class="logo-text">VoyageFlow</span>
+      </div>
+
+      <nav class="nav" id="navbar">
+        <a href="#paris" class="nav-link active">Paris</a>
+        <a href="#tokyo" class="nav-link">Tokyo</a>
+        <a href="#bali" class="nav-link">Bali</a>
+        <a href="#newyork" class="nav-link">New York</a>
+        <a href="#dubai" class="nav-link">Dubai</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="calculator.html" class="nav-link cta-link">Trip Planner</a>
+      </nav>
+
+      <!-- Mobile menu button -->
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="hero-tag">Travel Blog • Inspiration • Guides</p>
+      <h1>Explore the world one story at a time.</h1>
+      <p class="hero-subtitle">
+        From romantic streets in Paris to neon nights in Tokyo – 
+        VoyageFlow helps you understand a place before you book your ticket.
+      </p>
+      <div class="hero-actions">
+        <a href="#paris" class="btn primary">Start Reading</a>
+        <a href="calculator.html" class="btn ghost">Plan My Trip</a>
+      </div>
+      <p class="hero-note">Scroll down or use the tabs in the top bar to jump between destinations.</p>
+    </div>
+  </section>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main class="main">
+
+    <!-- ====== PARIS ====== -->
+    <section id="paris" class="destination-section" data-section>
+      <div class="destination-media">
+        <img src="https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg" alt="Eiffel Tower in Paris at sunset">
+      </div>
+      <div class="destination-content">
+        <h2>Paris, France – The City of Lights & Love</h2>
+        <p class="destination-intro">
+          Paris is more than a postcard-perfect Eiffel Tower shot. It’s café culture, riverside walks, late-night conversations, 
+          and a deep sense of art and history in every corner.
+        </p>
+
+        <div class="destination-meta">
+          <div>
+            <h3>Best Time to Visit</h3>
+            <p>April–June, September–October (mild weather, fewer crowds).</p>
+          </div>
+          <div>
+            <h3>Ideal Budget (per day)</h3>
+            <p>₹9,000 – ₹15,000 (mid-range stay, metro, museums & café food).</p>
+          </div>
+          <div>
+            <h3>Trip Type</h3>
+            <p>Romantic • Cultural • Food Lover</p>
+          </div>
+        </div>
+
+        <div class="destination-details">
+          <h3>Must-Visit Highlights</h3>
+          <ul>
+            <li>Sunset view of the Eiffel Tower from Trocadéro.</li>
+            <li>Louvre Museum – home of the Mona Lisa and world art heritage.</li>
+            <li>Seine River cruise for a relaxed city overview.</li>
+            <li>Montmartre & Sacré-Cœur – bohemian vibes and city views.</li>
+          </ul>
+
+          <h3>Local Food to Try</h3>
+          <ul>
+            <li>Croissants & pain au chocolat from a local boulangerie.</li>
+            <li>Crêpes (sweet & savoury) from street-side stalls.</li>
+            <li>French onion soup, escargot, and authentic crème brûlée.</li>
+          </ul>
+
+          <h3>Safety & Tips</h3>
+          <p>
+            Paris is generally safe, but watch out for pickpockets, especially near tourist hotspots and in the metro. 
+            Buy a metro pass for 3–5 days if you plan to explore a lot. A few basic French phrases like 
+            <em>bonjour</em> (hello) and <em>merci</em> (thank you) go a long way in getting friendly service.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== TOKYO ====== -->
+    <section id="tokyo" class="destination-section alt" data-section>
+      <div class="destination-media">
+        <img src="https://images.pexels.com/photos/208745/pexels-photo-208745.jpeg" alt="Tokyo street with neon lights at night">
+      </div>
+      <div class="destination-content">
+        <h2>Tokyo, Japan – Neon Future Meets Ancient Tradition</h2>
+        <p class="destination-intro">
+          Tokyo is a high-speed blend of cutting-edge technology, anime culture, historic temples, and some of the world’s most 
+          disciplined public transport systems.
+        </p>
+
+        <div class="destination-meta">
+          <div>
+            <h3>Best Time to Visit</h3>
+            <p>March–April (cherry blossoms) & October–November (autumn colours).</p>
+          </div>
+          <div>
+            <h3>Ideal Budget (per day)</h3>
+            <p>₹8,000 – ₹13,000 (depending on neighbourhood & food choices).</p>
+          </div>
+          <div>
+            <h3>Trip Type</h3>
+            <p>Tech • Culture • Anime • Food</p>
+          </div>
+        </div>
+
+        <div class="destination-details">
+          <h3>Must-Visit Highlights</h3>
+          <ul>
+            <li>Shibuya Crossing – the world-famous “scramble” crossing.</li>
+            <li>Sensō-ji Temple in Asakusa – Tokyo’s oldest temple.</li>
+            <li>Akihabara – heaven for gamers, anime lovers & tech fans.</li>
+            <li>TeamLab Planets / Borderless – digital immersive art experience.</li>
+          </ul>
+
+          <h3>Local Food to Try</h3>
+          <ul>
+            <li>Ramen (try different broths – shoyu, miso, tonkotsu).</li>
+            <li>Sushi & sashimi from a local conveyor-belt restaurant.</li>
+            <li>Takoyaki, okonomiyaki, and convenience-store snacks.</li>
+          </ul>
+
+          <h3>Productivity Tips for Travellers</h3>
+          <p>
+            Get a Suica or Pasmo card for seamless metro travel. Use Google Maps and hyperdia-like apps for trains, 
+            and always keep cash, as some smaller shops still prefer it. Most public spaces have vending machines, 
+            so staying hydrated on the go is easy and cheap.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== BALI ====== -->
+    <section id="bali" class="destination-section" data-section>
+      <div class="destination-media">
+        <img src="https://images.pexels.com/photos/2306291/pexels-photo-2306291.jpeg" alt="Tegallalang rice terraces in Bali">
+      </div>
+      <div class="destination-content">
+        <h2>Bali, Indonesia – Nature, Culture & Digital-Nomad Paradise</h2>
+        <p class="destination-intro">
+          Bali is where lush rice fields, temples, waterfalls, and beach clubs meet a huge international community of travellers 
+          and remote workers.
+        </p>
+
+        <div class="destination-meta">
+          <div>
+            <h3>Best Time to Visit</h3>
+            <p>April–October (dry season, great for beaches & bikes).</p>
+          </div>
+          <div>
+            <h3>Ideal Budget (per day)</h3>
+            <p>₹4,500 – ₹9,000 (Bali can be very affordable if planned well).</p>
+          </div>
+          <div>
+            <h3>Trip Type</h3>
+            <p>Nature • Spiritual • Relax • Remote Work</p>
+          </div>
+        </div>
+
+        <div class="destination-details">
+          <h3>Must-Visit Highlights</h3>
+          <ul>
+            <li>Tegallalang rice terraces near Ubud.</li>
+            <li>Ulun Danu Beratan & Tanah Lot temples.</li>
+            <li>Beaches of Canggu, Seminyak and Uluwatu.</li>
+            <li>Waterfalls like Tegenungan & Sekumpul.</li>
+          </ul>
+
+          <h3>Local Food to Try</h3>
+          <ul>
+            <li>Nasi Goreng (fried rice) & Mie Goreng (fried noodles).</li>
+            <li>Satay skewers with peanut sauce.</li>
+            <li>Fresh smoothie bowls and local Bali coffee.</li>
+          </ul>
+
+          <h3>Work & Wi-Fi Tips</h3>
+          <p>
+            Bali is full of co-working cafés with strong Wi-Fi and power sockets, especially in Canggu and Ubud. 
+            If you’re planning a workation, choose accommodation that mentions reliable internet in reviews. 
+            Scooters are the easiest way to move around, but always wear a helmet.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== NEW YORK ====== -->
+    <section id="newyork" class="destination-section alt" data-section>
+      <div class="destination-media">
+        <img src="https://images.pexels.com/photos/313782/pexels-photo-313782.jpeg" alt="Skyline of New York City">
+      </div>
+      <div class="destination-content">
+        <h2>New York City, USA – The City That Never Sleeps</h2>
+        <p class="destination-intro">
+          New York is a fast-paced blend of skyscrapers, Broadway shows, iconic parks, and neighbourhoods that feel like 
+          different countries altogether.
+        </p>
+
+        <div class="destination-meta">
+          <div>
+            <h3>Best Time to Visit</h3>
+            <p>April–June & September–November (pleasant weather, lots of events).</p>
+          </div>
+          <div>
+            <h3>Ideal Budget (per day)</h3>
+            <p>₹10,000 – ₹18,000 (NYC can be expensive, but can be optimised).</p>
+          </div>
+          <div>
+            <h3>Trip Type</h3>
+            <p>Urban • Shopping • Entertainment</p>
+          </div>
+        </div>
+
+        <div class="destination-details">
+          <h3>Must-Visit Highlights</h3>
+          <ul>
+            <li>Central Park – a green oasis in the concrete jungle.</li>
+            <li>Times Square & Broadway show experience.</li>
+            <li>Brooklyn Bridge walk at sunrise or sunset.</li>
+            <li>Statue of Liberty & Ellis Island ferry tour.</li>
+          </ul>
+
+          <h3>Local Food to Try</h3>
+          <ul>
+            <li>New York-style pizza slices.</li>
+            <li>Bagels with cream cheese & lox.</li>
+            <li>Food trucks – hotdogs, halal carts, tacos.</li>
+          </ul>
+
+          <h3>Money-Saving Tips</h3>
+          <p>
+            Get a MetroCard (or equivalent) for unlimited subway and bus use. Consider city passes that bundle entry to 
+            major attractions. Many museums have “pay what you wish” days – perfect for budget-conscious travellers.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== DUBAI ====== -->
+    <section id="dubai" class="destination-section" data-section>
+      <div class="destination-media">
+        <img src="https://images.pexels.com/photos/111362/pexels-photo-111362.jpeg" alt="Dubai skyline with Burj Khalifa">
+      </div>
+      <div class="destination-content">
+        <h2>Dubai, UAE – Desert Dreams & Futuristic Skylines</h2>
+        <p class="destination-intro">
+          Dubai combines luxury malls, desert safaris, skyscrapers, beaches, and cultural quarters like Old Dubai 
+          – all within a highly connected, safe city.
+        </p>
+
+        <div class="destination-meta">
+          <div>
+            <h3>Best Time to Visit</h3>
+            <p>November–March (cooler weather, ideal for outdoor activities).</p>
+          </div>
+          <div>
+            <h3>Ideal Budget (per day)</h3>
+            <p>₹7,000 – ₹14,000 (depending on stay & attractions).</p>
+          </div>
+          <div>
+            <h3>Trip Type</h3>
+            <p>Luxury • Desert • Family • Shopping</p>
+          </div>
+        </div>
+
+        <div class="destination-details">
+          <h3>Must-Visit Highlights</h3>
+          <ul>
+            <li>Burj Khalifa observation deck.</li>
+            <li>Desert safari with dune bashing & BBQ dinner.</li>
+            <li>Dubai Marina & JBR Beach walk.</li>
+            <li>Old Dubai – Gold Souk & Spice Souk.</li>
+          </ul>
+
+          <h3>Local Food & Culture</h3>
+          <ul>
+            <li>Shawarma, falafel, and hummus platters.</li>
+            <li>Arabic coffee and dates.</li>
+            <li>Local Emirati dishes like Machboos and Harees.</li>
+          </ul>
+
+          <h3>Dress Code & Etiquette</h3>
+          <p>
+            Dubai is modern but still rooted in tradition. Dress modestly in malls and public places, especially in Old Dubai. 
+            Beachwear is fine at pools and private beaches. Public transport is clean, safe, and highly efficient.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== CTA / NEXT PAGE ====== -->
+    <section class="cta-section">
+      <div class="cta-inner">
+        <h2>Ready to turn inspiration into an actual journey?</h2>
+        <p>
+          You’ve explored our featured destinations. Now head over to the VoyageFlow Trip Planner to choose travel options, 
+          food packages, activities, and get a live estimate of your trip cost.
+        </p>
+        <a href="calculator.html" class="btn primary">Go to Trip Planner</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <p>© <span id="year"></span> VoyageFlow • Built as an interactive travel experience simulator.</p>
+    <div class="footer-links">
+      <a href="about.html">About Us</a>
+      <a href="index.html">Back to Registration</a>
+    </div>
+  </footer>
+
+  <script src="blog.js"></script>
+</body>
+</html>
