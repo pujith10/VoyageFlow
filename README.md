@@ -65,5 +65,3 @@ Built with **no backend, no frameworks, and no database** — just clean, struct
 
 ---
 
-## 📁 Folder Structure
-
